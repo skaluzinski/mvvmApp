@@ -2,7 +2,6 @@ package com.example.mvvmapp.users.views
 
 
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -80,6 +79,11 @@ class UsersListFragment : Fragment() {
         }
     }
 
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
+    }
+
     private fun userEdit(user: User) {
         viewModel.onEvent(UsersListEvent.UserClicked(user))
     }
@@ -91,12 +95,10 @@ class UsersListFragment : Fragment() {
     private fun navigate(route: String) = when (route) {
 
         Routes.ADD_EDIT_USER -> {
-            Log.d("dupa","dupa")
             val action = UsersListFragmentDirections.usersListToCreateEditUser("")
             requireView().findNavController().navigate(action)
         }
         else -> {
-            Log.d("dupa","dupa")
             if (route.contains(Routes.ADD_EDIT_USER)) {
 
                 val pattern = "\\d+".toRegex()
@@ -108,6 +110,7 @@ class UsersListFragment : Fragment() {
             }
         }
     }
+
 
     private fun showHideProgressBar(state: Boolean) {
         if (state) binding.progressBar.visibility =

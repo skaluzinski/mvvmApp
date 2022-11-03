@@ -103,6 +103,11 @@ class CreateEditUserFragment : Fragment() {
         }
     }
 
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
+    }
+
     private fun showSnackbar(message: String){
         Snackbar.make(
             binding.root,
