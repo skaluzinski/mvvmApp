@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph.xml"
+    app:startDestination="@id/mainMenuFragment">
+
+    <fragment
+        android:id="@+id/usersList"
+        android:name="com.example.mvvmapp.users.views.UsersListFragment"
+        android:label="usersList"
+        tools:layout="@layout/users_list_fragment">
+        <action
+            android:id="@+id/usersList_to_createEdit_user"
+            app:destination="@id/createEditUserFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/createEditUserFragment"
+        android:name="com.example.mvvmapp.users.views.CreateEditUserFragment"
+        android:label="create_edit_user"
+        tools:layout="@layout/create_edit_user" >
+        <action
+            android:id="@+id/action_createEditUserFragment_to_mainFragment"
+            app:destination="@id/usersList" />
+        <argument android:name="userId"
+            app:argType="string"
+            app:nullable="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/mainMenuFragment"
+        android:name="com.example.mvvmapp.users.views.MainMenuFragment"
+        android:label="main_menu_fragment"
+        tools:layout="@layout/main_menu_fragment" >
+        <action
+            android:id="@+id/action_mainMenu_to_createEditUserFragment"
+            app:destination="@id/createEditUserFragment" />
+        <action
+            android:id="@+id/action_mainMenu_to_usersList"
+            app:destination="@id/usersList" />
+    </fragment>
+</navigation>

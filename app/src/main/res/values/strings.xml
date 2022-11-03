@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">MVVM app</string>
+    <string name="surnameHint">Kowalski</string>
+    <string name="nameHint">Adam</string>
+    <string name="lorem">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</string>
+    <string name="checkboxHint">Is user an admin?</string>
+    <string name="admin">Admin:</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="listString">List of users</string>
+    <string name="add_new_user">Add new user</string>
+    <string name="noteHint">Place your note</string>
+    <string name="addButton">Add new user</string>
+</resources>
